@@ -1,0 +1,93 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "web2apk: Validate config",
+      "type": "shell",
+      "command": "npm test",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "web2apk: Lint",
+      "type": "shell",
+      "command": "npm run lint",
+      "group": "build",
+      "problemMatcher": ["$eslint-stylish", "$markdownlint"],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "web2apk: Format",
+      "type": "shell",
+      "command": "npm run format",
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      "label": "web2apk: Sync Capacitor",
+      "type": "shell",
+      "command": "npm run sync",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "web2apk: Build Android Debug APK",
+      "type": "shell",
+      "command": "npm run build:apk",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gradle"],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "web2apk: Build Android Release APK",
+      "type": "shell",
+      "command": "npm run build:release",
+      "group": "build",
+      "problemMatcher": ["$gradle"],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "web2apk: Build Android App Bundle (.aab)",
+      "type": "shell",
+      "command": "npm run build:bundle",
+      "group": "build",
+      "problemMatcher": ["$gradle"],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "web2apk: Build iOS (Simulator)",
+      "type": "shell",
+      "command": "npm run build:ios",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "web2apk: Generate Icons & Splash",
+      "type": "shell",
+      "command": "npm run assets",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "web2apk: Open in Android Studio",
+      "type": "shell",
+      "command": "npm run open:android",
+      "problemMatcher": []
+    },
+    {
+      "label": "web2apk: Open in Xcode",
+      "type": "shell",
+      "command": "npm run open:ios",
+      "problemMatcher": []
+    },
+    {
+      "label": "web2apk: Clean build outputs",
+      "type": "shell",
+      "command": "npm run clean",
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    }
+  ]
+}
