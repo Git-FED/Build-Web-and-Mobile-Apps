@@ -1,0 +1,17 @@
+/* TEAM */
+
+Founder: web2apk contributors
+Site: https://github.com/FED-OS/Build-Mobile-Apps-Android-iOS
+Contact: https://github.com/FED-OS/Build-Mobile-Apps-Android-iOS/issues
+
+/* THANKS */
+
+Capacitor: https://capacitorjs.com
+Ionic: https://ionicframework.com
+GitHub Actions: https://github.com/features/actions
+
+/* TECHNOLOGY */
+
+Runtime: Capacitor 8
+Languages: HTML, CSS, JavaScript, Java, Swift, Gradle, YAML
+Build: GitHub Actions
