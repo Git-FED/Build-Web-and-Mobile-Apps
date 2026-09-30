@@ -1,0 +1,72 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[gradle]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[swift]": {
+    "editor.defaultFormatter": null,
+    "editor.tabSize": 4
+  },
+
+  "files.associations": {
+    "*.jsonc": "jsonc",
+    "Podfile": "ruby",
+    "*.plist": "xml",
+    "capacitor.config.json": "json"
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/Pods": true,
+    "**/.gradle": true,
+    "**/android/app/build": true,
+    "**/ios/App/build": true,
+    "**/ios/App/Pods": true
+  },
+
+  "eslint.validate": ["javascript", "json"],
+  "markdownlint.configFile": ".markdownlint.jsonc",
+  "prettier.configPath": ".prettierrc",
+
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "terminal.integrated.scrollback": 10000,
+
+  "github-actions.workflows.pinned.workflows": [],
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
+}
