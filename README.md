@@ -1,3 +1,90 @@
+# web2app.studio
+
+Turn a live website URL into a launch-ready app shell for **Android, iOS, Windows, macOS, Linux, and the web/PWA**.
+
+The repository includes a browser-first builder in `www/`. It validates a public URL, derives a safe reverse-domain app ID, previews the target site, remembers recent projects locally, and exports configuration JSON for each platform family.
+
+## Use the builder
+
+```bash
+npm install
+npx serve www
+```
+
+Open the local address, enter a public HTTPS URL, choose the app name and targets, then select **Generate app config**. The builder downloads:
+
+- `*-capacitor.json` — live URL configuration for the Android and iOS Capacitor shells.
+- `*-desktop.json` — Electron start URL and desktop targets.
+- `*-manifest.json` — installable web/PWA metadata.
+
+The builder is intentionally backend-free: projects are stored in the browser's local storage, and the generated files never leave the device.
+
+## Build from the generated configuration
+
+### Mobile (Capacitor)
+
+Copy the generated Capacitor values into `capacitor.config.json`, then run:
+
+```bash
+npm install
+npx cap sync android ios
+npm run build:apk
+```
+
+Android debug APKs are produced by the included Gradle project. iOS device/App Store builds require macOS, Xcode, signing, and an Apple Developer account.
+
+### Desktop (Electron)
+
+The Electron shell loads a live URL when launched with either `WEB2APP_URL` or `--url=`:
+
+```bash
+WEB2APP_URL=https://yourwebsite.com npm run dist -- --linux
+npm run dist -- --win
+npm run dist -- --mac
+```
+
+### Web / PWA
+
+The existing service worker and manifest make `www/` installable as a PWA. Cloudflare Pages is configured as the production static host. The Pages build copies `www/` into `dist/`, writes safe response headers, and can be deployed with the committed `wrangler.toml`. The live target URL is configured in the exported manifest; the builder itself remains available as the configuration dashboard.
+
+### Cloudflare deployment
+
+This repository is configured for the existing **Cloudflare Workers Build** named `fed-shell-universal-fleet-build`. It builds the static site into `dist/`, then the Worker serves those assets.
+
+For the current Cloudflare Workers Build settings use:
+
+- **Build command:** `npm run build`
+- **Deploy command:** `npm run deploy` (or the existing `npx wrangler deploy`)
+- **Root directory:** `/`
+- **Node version:** `22.23.2`
+
+The Worker configuration is in `wrangler.toml`; its entry point is `worker/index.js` and its static assets directory is `dist/`.
+
+If you create a separate Cloudflare Pages project instead, use `wrangler.pages.toml`, build with `npm run build`, publish `dist`, and leave the deploy command empty.
+
+## CI outputs
+
+`.github/workflows/build.yml` builds:
+
+- Android debug and release APKs for all configured architectures.
+- An iOS Simulator app.
+- Windows, macOS, and Linux Electron installers.
+
+Production store distribution still requires the platform's own signing and review process. Android release artifacts are debug-signed by default; configure a real keystore before Play Store submission.
+
+## Project structure
+
+```text
+www/                       URL-to-app builder and PWA shell
+electron/main.cjs           Desktop URL loader
+android/                    Capacitor Android project
+ios/                        Capacitor iOS project
+capacitor.config.json       Native shell configuration
+.github/workflows/build.yml Cross-platform CI
+scripts/test.mjs            Repository smoke tests
+```
+
+
 <img width="807" height="450" alt="1780084581" src="https://github.com/user-attachments/assets/df2d911b-3b04-4bad-a9f2-b436779f89d2" />
 
 # web2apk — turn a website into an installable Android APK 
