@@ -1,4 +1,4 @@
-# web2app.studio
+# web2app.studio by fedpromptly.org
 
 Turn a live website URL into a launch-ready app shell for **Android, iOS, Windows, macOS, Linux, and the web/PWA**.
 
