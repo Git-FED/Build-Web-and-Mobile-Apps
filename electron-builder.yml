@@ -1,0 +1,29 @@
+appId: com.example.mywebapp.desktop
+productName: My Web App
+artifactName: ${productName}-${version}-${os}-${arch}.${ext}
+
+files:
+  - electron/**/*
+  - www/**/*
+  - capacitor.config.json
+
+asar: true
+
+mac:
+  category: public.app-category.utilities
+  target:
+    - dmg
+    - zip
+
+win:
+  target:
+    - nsis
+    - zip
+
+linux:
+  category: Utility
+  syncDesktopName: true
+  maintainer: FED Shell <support@example.com>
+  target:
+    - AppImage
+    - deb
