@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Keep Capacitor WebView cache out of backups (it's regenerable). -->
+    <exclude domain="sharedpref" path="CapacitorWebView.xml" />
+    <exclude domain="database" path="webview.db" />
+    <exclude domain="database" path="webviewCache.db" />
+</full-backup-content>

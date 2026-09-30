@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Enforce HTTPS by default. Cleartext (HTTP) traffic is blocked.
+
+         If you MUST load an http:// site (e.g. local dev), either:
+           - set "server.cleartext": true in capacitor.config.json, or
+           - add a domain-specific exception below:
+
+         <domain-config cleartextTrafficPermitted="true">
+             <domain includeSubdomains="true">your-dev-server.local</domain>
+         </domain-config>
+    -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
