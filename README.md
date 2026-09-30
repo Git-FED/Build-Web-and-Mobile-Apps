@@ -1,4 +1,6 @@
-# web2app.studio by fedpromptly.org
+# web2app.studio by www.fedpromptly.org
+
+<img width="2560" height="1440" alt="30_native_sdk_before_after" src="https://github.com/user-attachments/assets/44193b3e-f432-482c-a8ea-8d215a13fc73" />
 
 Turn a live website URL into a launch-ready app shell for **Android, iOS, Windows, macOS, Linux, and the web/PWA**.
 
@@ -33,6 +35,8 @@ npm run build:apk
 
 Android debug APKs are produced by the included Gradle project. iOS device/App Store builds require macOS, Xcode, signing, and an Apple Developer account.
 
+<img width="2560" height="1440" alt="fed-shell-software-only-creation" src="https://github.com/user-attachments/assets/62210644-2446-4bb6-813f-e5a5d1032837" />
+
 ### Desktop (Electron)
 
 The Electron shell loads a live URL when launched with either `WEB2APP_URL` or `--url=`:
@@ -62,6 +66,8 @@ The Worker configuration is in `wrangler.toml`; its entry point is `worker/index
 
 If you create a separate Cloudflare Pages project instead, use `wrangler.pages.toml`, build with `npm run build`, publish `dist`, and leave the deploy command empty.
 
+<img width="2560" height="1440" alt="18_what_fed_shell_handles" src="https://github.com/user-attachments/assets/ab9799b0-ef62-48db-8fea-4e61cbb1012f" />
+
 ## CI outputs
 
 `.github/workflows/build.yml` builds:
@@ -84,8 +90,7 @@ capacitor.config.json       Native shell configuration
 scripts/test.mjs            Repository smoke tests
 ```
 
-
-<img width="807" height="450" alt="1780084581" src="https://github.com/user-attachments/assets/df2d911b-3b04-4bad-a9f2-b436779f89d2" />
+<img width="2560" height="1440" alt="17_github_actions_builds" src="https://github.com/user-attachments/assets/7627e47e-1256-4d5d-afdc-d5b4fa44d733" />
 
 # web2apk — turn a website into an installable Android APK 
 
